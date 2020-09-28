@@ -1,13 +1,12 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
+const gravatar = require('../util/gravatar');
 const {
   AuthenticationError,
   ForbiddenError
 } = require('apollo-server-express');
-require('dotenv').config();
 
-const gravatar = require('../util/gravatar');
+require('dotenv').config();
 
 module.exports = {
   newNote: async (parent, args, { models }) => {
