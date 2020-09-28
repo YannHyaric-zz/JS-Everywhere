@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
 const {
   AuthenticationError,
   ForbiddenError
@@ -15,6 +16,7 @@ module.exports = {
       author: 'Adam Scott'
     });
   },
+
   deleteNote: async (parent, { id }, { models }) => {
     try {
       await models.Note.findOneAndRemove({ _id: id });
@@ -23,6 +25,7 @@ module.exports = {
       return false;
     }
   },
+
   updateNote: async (parent, { content, id }, { models }) => {
     try {
       return await models.Note.findOneAndUpdate(
@@ -42,6 +45,7 @@ module.exports = {
       throw new Error('Error updating note');
     }
   },
+
   signUp: async (parent, { username, email, password }, { models }) => {
     // normalize email address
     email = email.trim().toLowerCase();
@@ -64,6 +68,7 @@ module.exports = {
       throw new Error('Error creating account');
     }
   },
+  
   signIn: async (parent, { username, email, password }, { models }) => {
     if (email) {
       // normalize email address

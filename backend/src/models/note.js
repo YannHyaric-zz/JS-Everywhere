@@ -21,5 +21,6 @@ const noteSchema = new mongoose.Schema(
 
 // Define the 'Note' model with the schema
 const Note = mongoose.model('Note', noteSchema);
+
 // Export the module
 module.exports = Note;
