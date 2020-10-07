@@ -63,5 +63,5 @@ typings/
 # VSCode settings
 .vscode/
 
-solutions/*
+solutions/
 final/*
